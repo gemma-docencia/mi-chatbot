@@ -56,11 +56,11 @@
 
     async function llamarIA(mensaje, apiKey) {
       try {
-        const respuesta = await fetch("https://api.openai.com/v1/chat/completions", {
+        const respuesta = await fetch("https://api.groq.com/openai/v1/chat/completions", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Authorization": "Bearer " + apiKey },
           body: JSON.stringify({
-            model: "gpt-3.5-turbo",
+            model: "llama-3.1-8b-instant",
             messages: [
               { role: "system", content: personalidad },
               { role: "user", content: mensaje }
